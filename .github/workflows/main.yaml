@@ -5,14 +5,15 @@ on:
       foo:
         type: boolean
         description: deploy 'foo' service
-        required: false
+        required: true
       bar:
         type: boolean
         description: deploy 'bar' service
-        required: false
+        required: true
       beer:
         type: boolean
         description: deploy 'beer' service
+        default: true
         required: true
 
 jobs:
