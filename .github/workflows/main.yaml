@@ -21,5 +21,8 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
-      - run: |-
-          echo toJSON(${{ github.event.inputs }})
+      - name: Print inputs
+        env:
+          INPUTS: toJSON(${{ github.event.inputs }})
+        run: |-
+          echo $INPUTS
