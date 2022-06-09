@@ -1,0 +1,24 @@
+name: main
+on:
+  workflow_dispatch:
+    inputs:
+      foo:
+        type: boolean
+        description: deploy 'foo' service
+        required: false
+      bar:
+        type: boolean
+        description: deploy 'bar' service
+        required: false
+      beer:
+        type: boolean
+        description: deploy 'beer' service
+        required: true
+
+jobs:
+  main:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: |-
+          echo ${{ github.event.inputs }}
