@@ -15,47 +15,6 @@ on:
         description: deploy 'beer' service
         default: true
         required: true
-      beep:
-        type: boolean
-        description: deploy 'beer' service
-        default: true
-        required: true
-      deep:
-        type: boolean
-        description: deploy 'beer' service
-        default: true
-        required: true
-      deer:
-        type: boolean
-        description: deploy 'beer' service
-        default: true
-        required: true
-      dear:
-        type: boolean
-        description: deploy 'beer' service
-        default: true
-        required: true
-      bear:
-        type: boolean
-        description: deploy 'beer' service
-        default: true
-        required: true
-      fear:
-        type: boolean
-        description: deploy 'beer' service
-        default: true
-        required: true
-      near:
-        type: boolean
-        description: deploy 'beer' service
-        default: true
-        required: true
-      neat:
-        type: boolean
-        description: deploy 'beer' service
-        default: true
-        required: true
-
 jobs:
   main:
     runs-on: ubuntu-22.04
