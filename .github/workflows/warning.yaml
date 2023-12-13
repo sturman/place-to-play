@@ -10,3 +10,6 @@ jobs:
           echo "Hello from GitHub Actions"
       - name: Post warning
         run: echo "::warning title=WARNING::Here is the warning message"
+      - name: Echo message
+        run: |
+          echo "I'm post-workflow message"
