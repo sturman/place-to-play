@@ -9,4 +9,4 @@ jobs:
         run: |
           echo "Hello from GitHub Actions"
       - name: Post warning
-        run: echo "::warning ::"Here is the warning message"
+        run: echo "::warning ::Here is the warning message"
