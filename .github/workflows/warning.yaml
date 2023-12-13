@@ -1,0 +1,12 @@
+on:
+  pull_request:
+
+jobs:
+  main:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Echo message
+        run: |
+          echo "Hello from GitHub Actions"
+      - name: Post warning
+        run: echo "::warning Here is the warning message"
