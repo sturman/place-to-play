@@ -17,11 +17,23 @@ on:
         required: true
 jobs:
   main:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - name: Print inputs
         env:
           INPUTS: ${{ toJSON(github.event.inputs) }}
         run: |-
           echo $INPUTS
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: docker.io/{{ github.repository }}
+          tags: |
+            type=raw,value={{branch}}-{{date 'YYYYMMDD-HHmmss'}}-{{sha}}
+      - name: Print metadata
+        run: | 
+          echo "Metadata: ${{ steps.meta.outputs.tags }}"
+          echo "Labels: ${{ steps.meta.outputs.labels }}"
+          echo "Digest: ${{ steps.meta.outputs.digest }}"
