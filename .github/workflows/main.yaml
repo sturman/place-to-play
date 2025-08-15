@@ -34,6 +34,7 @@ jobs:
             type=raw,value={{branch}}-{{date 'YYYYMMDD-HHmmss'}}-{{sha}}
       - name: Print metadata
         run: | 
-          echo "Metadata: ${{ steps.meta.outputs.tags }}"
+          echo "Tags: ${{ steps.meta.outputs.tags }}"
           echo "Labels: ${{ steps.meta.outputs.labels }}"
           echo "Digest: ${{ steps.meta.outputs.digest }}"
+          echo "Version: ${{ steps.meta.outputs.version }}"
